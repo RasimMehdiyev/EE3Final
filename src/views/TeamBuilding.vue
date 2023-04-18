@@ -95,7 +95,7 @@ export default
             const formdata = new FormData();
             formdata.append("team", this.team_name);
             formdata.append("members", [this.member1, this.member2, this.member3, this.member4])
-            fetch("http://localhost:8000/teams/", {
+            fetch("https://ee3project.herokuapp.com/teams/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

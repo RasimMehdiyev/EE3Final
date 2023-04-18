@@ -22,7 +22,7 @@
                     <img style="width:40px; height:80px" src="../assets/mastermind.png" alt="">
                 </div>
                 <div @click="this.$router.push('/laser')" class="hint-page__container__box">
-                    <img src="../assets/walkietalkie.png" alt="">
+                    <img src="../assets/lasernew.png" alt="">
                 </div>
                 <div @click="this.$router.push('/portal-gun')" class="hint-page__container__box">
                     <img style="width:80px; height:70px" src="../assets/portalgun.png" alt="">
