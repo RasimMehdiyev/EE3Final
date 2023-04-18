@@ -1,7 +1,7 @@
 <template>
     <section class="home">
         <p class="home-p-top">Mission in progress</p>
-        <div class="circle">
+        <div @click="this.$router.push('/hints')" class="circle">
             <img class="circle-image" src="../assets/image10.png" alt="">
         </div>
         <p class="home-p-bottom">Click in the center to get help from Galactic Federation</p>

@@ -37,7 +37,7 @@
 
         methods: {
             forward(){
-                this.$router.push('/')
+                this.$router.push('/teams')
             },
             back(){
                 this.$router.push('/intro')

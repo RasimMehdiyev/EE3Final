@@ -2,7 +2,7 @@
     <section>
         <!-- create 6 boxes with grid, two in each row -->
 
-        <div class="arrow">
+        <div @click="this.$router.push('/')" class="arrow">
             <img src="../assets/Vector.png" alt="">
         </div>
         <div>
@@ -13,10 +13,10 @@
         <div class="hint-page">
             <div class="hint-page__container">
                 <div class="hint-page__container__box">
-                    <img src="../assets/cube_rnm.png" alt="">
+                    <img  src="../assets/cube_rnm.png" alt="">
                 </div>
-                <div class="hint-page__container__box">
-                    <img src="../assets/glasses.png" alt="">
+                <div @click="this.$router.push('/voices')" class="hint-page__container__box">
+                    <img  src="../assets/voices.png" alt="">
                 </div>
                 <div @click="this.$router.push('/mastermind')" class="hint-page__container__box">
                     <img style="width:40px; height:80px" src="../assets/mastermind.png" alt="">

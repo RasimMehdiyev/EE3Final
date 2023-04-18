@@ -12,24 +12,24 @@
         </div>
         <div class="grid-9-voices">
             <div @click="changeColor" class="grid-box-9">
-                <img src="../assets/DeCroc.png" alt="">
-                <p>De Croo</p>
+                <img src="../assets/Billie.png" alt="">
+                <p>Billie Eilish</p>
             </div>
             <div @click="changeColor" class="grid-box-9">
                 <img src="../assets/summer-1.png" alt="">
                 <p>Summer</p>
             </div>
             <div @click="changeColor" class="grid-box-9">
-                <img src="../assets/Kanye.png" alt="">
-                <p>Kanye</p>
+                <img src="../assets/Beth.png" alt="">
+                <p>Beth</p>
             </div>
             <div @click="changeColor" class="grid-box-9">
                 <img src="../assets/Jerry.png" alt="">
                 <p>Jerry</p>
             </div>
             <div @click="changeColor" class="grid-box-9">
-                <img src="../assets/trump.png" alt="">
-                <p>Trump</p>
+                <img src="../assets/Zendeya.png" alt="">
+                <p>Zendaya</p>
             </div>
             <div @click="changeColor" class="grid-box-9">
                 <img src="../assets/squache.png" alt="">
