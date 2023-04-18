@@ -8,7 +8,7 @@
               <th>Points</th>
             </tr>
             <tr v-for="team in this.teams" :key="team.id">
-                <td>{{this.counter++}}</td>
+                <td>{{team.id}}</td>
                 <td>{{team.name}}</td>
                 <td>00:00</td>
                 <td>{{team.points}}</td>
