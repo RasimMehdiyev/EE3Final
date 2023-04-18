@@ -90,6 +90,12 @@ const routes = [{
         name: 'portal-gun-3',
         component: () =>
             import ('../views/PortalGun3.vue')
+    },
+    {
+        path: '/leaderboard',
+        name: 'leaderboard',
+        component: () =>
+            import ('../views/LeaderBoard.vue')
     }
 
 ]
