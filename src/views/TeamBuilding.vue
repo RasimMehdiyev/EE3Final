@@ -9,7 +9,7 @@
                 <p style="" class="member_name">CAPTAIN</p>
                 <input id="member-1" type="text" placeholder="MEMBER NAME">
                 <div class="team-building__container__box">
-                    <img style="width: 83.5px; height: 152px;" src="../assets/image19.png" alt="">
+                    <img style="width: 73.5px; height: 132px;" src="../assets/image19.png" alt="">
                     <p style="text-align:left" class="team-building__container__box__p">
                         Great leader, always thinks carefully 
                         before taking a decision, ruthless, 
@@ -25,14 +25,14 @@
                         This agent is the brain behind the operation,
                         great at solving tough clues, the team always
                         relays on him for solving the hard enigmas                     </p>
-                    <img style="width: 83.5px; height: 152px;" src="../assets/image17.png" alt="">
+                    <img style="width: 73.5px; height: 132px;" src="../assets/image17.png" alt="">
                 </div>
             </div>
             <div class="member_box">
                 <p class="member_name">EARTH SPY</p>
                 <input id="member-3" type="text" placeholder="MEMBER NAME">
                 <div class="team-building__container__box">
-                    <img style="width: 83.5px; height: 152px;" src="../assets/earthspy.png" alt="">
+                    <img style="width: 73.5px; height: 132px;" src="../assets/earthspy.png" alt="">
                     <p style="text-align:left" class="team-building__container__box__p">
                         She used to be infiltrated in Rick Sánchez’s circle to 
                         gather information; didn’t hesitate to betray everyone.
@@ -48,7 +48,7 @@
                         Bravest member in the team. Used to be a hustler before being recruited.
                         Rumors say he has killed over 8400 enemies
                     </p>
-                    <img style="width: 140px; height: 152px;" src="../assets/specialist.png" alt="">
+                    <img style="width: 130px; height: 132px;" src="../assets/specialist.png" alt="">
                 </div>
             </div>
             <div>
@@ -61,6 +61,11 @@
 </template>
 
 <style>
+
+.team-building{
+    max-width:390px;
+}
+
 button{
     width:100px;
     height: 40px;

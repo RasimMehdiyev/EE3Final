@@ -335,11 +335,12 @@ footer {
 }
 
 .team-building__container__box p {
-    width: 250px;
-    height: 100px;
+    width: 200px;
+    height: 120px;
     margin-left: 10px;
     margin-right: 10px;
     font-size: 12px;
+    margin-top: 10px;
 }
 
 .team-building__container__box img {

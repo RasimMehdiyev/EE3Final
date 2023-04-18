@@ -1,7 +1,7 @@
 <template>
-    <NavBar v-if="this.$route.path!='/portal-gun-3' && this.$route.path!='/portal-gun-2' && this.$route.path != '/portal-gun' && this.$route.path != '/laser' && this.$route.path != '/mastermind' && this.$route.path != '/voices' && this.$route.path != '/intro' && this.$route.path != '/intro2' && this.$route.path != '/intro3' && this.$route.path != '/intro4' && this.$route.path != '/intro5'"  class="navbar"/>
+    <NavBar v-if="this.$route.path!='/teams' && this.$route.path!='/portal-gun-3' && this.$route.path!='/portal-gun-2' && this.$route.path != '/portal-gun' && this.$route.path != '/laser' && this.$route.path != '/mastermind' && this.$route.path != '/voices' && this.$route.path != '/intro' && this.$route.path != '/intro2' && this.$route.path != '/intro3' && this.$route.path != '/intro4' && this.$route.path != '/intro5'"  class="navbar"/>
     <router-view/>
-    <Footer v-if="this.$route.path != '/intro' && this.$route.path != '/intro2' && this.$route.path != '/intro3' && this.$route.path != '/intro4' && this.$route.path != '/intro5'" class="footer"/>
+    <Footer v-if="this.$route.path!='/teams' && this.$route.path != '/intro' && this.$route.path != '/intro2' && this.$route.path != '/intro3' && this.$route.path != '/intro4' && this.$route.path != '/intro5'" class="footer"/>
 </template>
 
 <script>
