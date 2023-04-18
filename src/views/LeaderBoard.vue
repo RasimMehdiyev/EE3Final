@@ -8,7 +8,7 @@
               <th>Points</th>
             </tr>
             <tr v-for="team in this.teams" :key="team.id">
-                <td>{{team.id}}</td>
+                <td>{{this.counter++}}</td>
                 <td>{{team.name}}</td>
                 <td>00:00</td>
                 <td>{{team.points}}</td>
@@ -46,7 +46,7 @@ export default{
     data(){
         return{
             teams: [],
-            counter:0,
+            counter:1,
         }
     },
     created(){
