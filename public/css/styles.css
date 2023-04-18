@@ -1,0 +1,396 @@
+@font-face {
+    font-family: "Get Schwifty";
+    src: url("../fonts/get_schwifty.ttf");
+    /* src: url("CustomFont.woff") format("woff"), url("CustomFont.otf") format("opentype"), url("CustomFont.svg#filename") format("svg"); */
+}
+
+
+/* custom color declare */
+
+:root {
+    --bg-black: #333645;
+    --bg-pure-black: #000000;
+    --title-ylw: #f6fa91;
+    --title-dark-yellow: #ffaa69;
+    --title-dark-blue: #1B244C;
+    --timer-dark-blue: #161D3D;
+    --bg-acid-green: #3d8a11;
+    --shdw-blood-red: #ff0000;
+    --timer-border-blue: #3D7F9D;
+    --txt-white: #C7DDFF;
+    --line-torqoise: #00FFE0;
+    --line-dark-blue: #385682;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+
+p {
+    color: var(--txt-white)!important;
+}
+
+body {
+    background-color: var(--bg-pure-black);
+    overflow-x: scroll;
+}
+
+a {
+    text-decoration: none;
+    color: var(--title-ylw);
+}
+
+a:hover {
+    color: var(--title-dark-yellow);
+    transition: 0.5s;
+}
+
+footer,
+nav {
+    /* background-color: var(--bg-acid-green); */
+    /* border-top: 3px solid var(--title-ylw); */
+    /* border-bottom: 3px solid var(--title-ylw); */
+}
+
+nav {
+    top: 0;
+    margin-top: 30px;
+    /* position: fixed; */
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* add transparency */
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 26px;
+    /* -webkit-text-stroke: 0.3px var(--shdw-blood-red); */
+}
+
+.title {
+    color: var(--title-dark-blue);
+    font-weight: 800;
+    font-size: 32px;
+    -webkit-text-stroke: 0.8px var(--title-ylw);
+    text-shadow: 0 0 3px var(--title-dark-blue);
+}
+
+.router-p:hover {
+    color: var(--shdw-blood-red);
+    transition: 0.5s;
+}
+
+.timer-module {
+    margin-top: 30px;
+    width: 145px;
+    height: 80px;
+    border-radius: 10px;
+    background-color: var(--timer-dark-blue);
+    border: 2px solid var(--timer-border-blue);
+    display: flex;
+    justify-content: center;
+    font-size: 46px;
+    color: var(--title-ylw);
+    -webkit-text-stroke: 0.8px var(--shdw-blood-red);
+}
+
+.parchment {
+    width: 100%;
+    height: 100%;
+    /* position: absolute; */
+}
+
+.input_fields {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input_fields input {
+    width: 40%;
+    height: 40px;
+    border: 2px solid var(--title-ylw);
+    border-radius: 5px;
+    background-color: var(--bg-black);
+    color: var(--title-ylw);
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.input_fields button {
+    background-color: var(--bg-acid-green);
+    border: 2px solid var(--title-ylw);
+    border-radius: 5px;
+    color: var(--title-dark-blue);
+    width: 30%;
+    height: 40px;
+    font-size: 22px;
+    /* stroke */
+    -webkit-text-stroke: 0.8px var(--title-ylw);
+}
+
+.team_name {
+    /* background-color: var(--bg-black); */
+    border: 2px solid var(--shdw-blood-red)!important;
+    border-radius: 5px;
+    color: var(--shdw-blood-red)!important;
+    width: 60%!important;
+}
+
+.input_fields button:hover {
+    background-color: var(--title-ylw);
+    color: var(--title-dark-blue);
+    transition: 0.5s;
+}
+
+.hint-page {
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.hint-page__container {
+    /* 6 boxes with grid and 2 boxes per row */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    margin-top: 30px;
+    justify-items: center;
+    margin-bottom: 35px;
+}
+
+.hint-page__container__box {
+    /* acid green background, squares, yellow border */
+    width: 100px;
+    height: 100px;
+    background-color: var(--line-dark-blue);
+    border: 2px solid var(--txt-white);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-p {
+    margin-top: 30px;
+}
+
+.arrow img {
+    width: 45px;
+    height: 23.5px;
+    margin-top: 30px;
+    /* margin-right: 235px; */
+}
+
+.hint-page__container__box img {
+    /* center the image */
+    width: 80px;
+    height: 80px;
+}
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.envelope {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px
+}
+
+.pre-footer-item p,
+.envelope p {
+    color: var(--txt-white);
+    font-size: 14px;
+}
+
+.svg_color {
+    filter: invert(92%) sepia(65%) saturate(1277%) hue-rotate(88deg) brightness(106%) contrast(100%);
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 115px;
+    margin-bottom: 75px;
+}
+
+.circle {
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    background-color: white;
+    border: 5px solid var(--line-torqoise);
+    box-shadow: 0 0 15px var(--line-torqoise);
+}
+
+.circle-image {
+    width: 277px;
+    height: 277px;
+}
+
+.home p {
+    color: var(--txt-white);
+    font-size: 14px;
+}
+
+.home-p-top {
+    margin-bottom: 20px;
+    font-size: 20px!important;
+}
+
+.home-p-bottom {
+    margin-top: 20px;
+}
+
+.countdown-timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-bar {
+    height: 5px;
+    background-color: var(--line-dark-blue);
+    position: relative;
+    width: 250%;
+    /* add glow */
+    box-shadow: 0 0 15px var(--line-torqoise);
+}
+
+.progress-bar-inner {
+    height: 5px;
+    background-color: var(--line-torqoise);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.timer-label {
+    color: white;
+    font-size: 12px;
+    margin-top: 10px;
+    /* remove stroke */
+    -webkit-text-stroke: 0.1px var(--line-torqoise);
+}
+
+.pre-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 200px;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+.pre-footer-item img {
+    width: 40px;
+    height: 40px;
+}
+
+.team-building__container {
+    /* 4 teammates with interchanging order of picture and description for each teammate */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    margin-top: 50px;
+    justify-items: center;
+    margin-bottom: 35px;
+}
+
+.team-building__container__box {
+    /* each block contains a team member */
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.team-building__container__box p {
+    width: 250px;
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.team-building__container__box img {
+    width: 30px;
+    height: 20px;
+}
+
+.member_name {
+    font-size: 18px;
+    color: var(--line-torqoise)!important;
+}
+
+.member_box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.member_box input {
+    width: 100px;
+    height: 25px;
+    margin-left: 155px;
+    margin-top: 10px;
+    background-color: var(--title-dark-blue);
+    border: 2px solid var(--line-torqoise)!important;
+    border-radius: 4px;
+    color: white!important;
+    font-size: 10px;
+    outline: #00b09c;
+}
+
+.team-building_input {
+    margin-top: 10px;
+    width: 150px;
+    height: 37.5px;
+    background-color: var(--title-dark-blue);
+    border: 2px solid var(--line-torqoise)!important;
+    border-radius: 4px;
+    color: white!important;
+    font-size: 16px;
+    outline: #00b09c;
+}
+
+.team-building_input::placeholder {
+    color: white!important;
+    font-size: 16px;
+    text-align: center;
+}
+
+.member_box input::placeholder {
+    color: white!important;
+    font-size: 10px;
+    text-align: center;
+}

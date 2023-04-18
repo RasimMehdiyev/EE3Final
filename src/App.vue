@@ -1,18 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <NavBar v-if="this.$route.path!='/portal-gun-3' && this.$route.path!='/portal-gun-2' && this.$route.path != '/portal-gun' && this.$route.path != '/laser' && this.$route.path != '/mastermind' && this.$route.path != '/voices' && this.$route.path != '/intro' && this.$route.path != '/intro2' && this.$route.path != '/intro3' && this.$route.path != '/intro4' && this.$route.path != '/intro5'"  class="navbar"/>
+    <router-view/>
+    <Footer v-if="this.$route.path != '/intro' && this.$route.path != '/intro2' && this.$route.path != '/intro3' && this.$route.path != '/intro4' && this.$route.path != '/intro5'" class="footer"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Footer from './components/FooterBar.vue'
+import NavBar from './components/NavBar.vue'
 export default {
-  name: 'App',
+  name: 'app',
   components: {
-    HelloWorld
-  }
+    Footer,
+    NavBar,
+
+  },
+  data() {
+    return {
+
+    }
+  },
+  beforeMount() {
+    // this.removeNavBarandFooter()
+  },
+  methods: {
+    removeNavBarandFooter(){
+      if (this.$route.path === '/intro') {
+      // make navbar and footer disappear
+      console.log(document.getElementsByClassName('navbar')[0])
+      document.getElementsByClassName('navbar')[0].style.display = 'none'; 
+      document.getElementsByClassName('footer')[0].style.display = 'none';
+    }
+    }
+  },
 }
 </script>
+
 
 <style>
 #app {
@@ -21,6 +43,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
