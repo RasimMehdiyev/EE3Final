@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div>
-                <button @click="setupTeam() && this.$router.push('/')">
+                <button @click="setupTeam();this.$router.push('/')">
                     CREATE TEAM
                 </button>
             </div>
