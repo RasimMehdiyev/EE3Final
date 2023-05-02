@@ -1,11 +1,11 @@
 <template>
     <section class="leaderboard">
-        <table >
+        <table>
             <tr>
-              <th>Ranking</th>
-              <th>Team</th>
-              <th>Time</th>
-              <th>Points</th>
+                <th>Ranking</th>
+                <th>Team</th>
+                <th>Time</th>
+                <th>Points</th>
             </tr>
             <tr v-for="team in this.teams" :key="team.id">
                 <td>{{team.id}}</td>
@@ -13,7 +13,7 @@
                 <td>00:00</td>
                 <td>{{team.points}}</td>
             </tr>
-          </table> 
+        </table> 
     </section>
 </template>
 

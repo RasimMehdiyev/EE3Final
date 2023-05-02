@@ -19,6 +19,37 @@ const routes = [{
             import ("../views/HintPage.vue")
     },
     {
+        path: "/hints-1",
+        name: "hints-1",
+        component: () =>
+            import ("../views/HintPage1.vue")
+    }, {
+        path: "/hints-2",
+        name: "hints-2",
+        component: () =>
+            import ("../views/HintPage2.vue")
+    }, {
+        path: "/hints-3",
+        name: "hints-3",
+        component: () =>
+            import ("../views/HintPage3.vue")
+    }, {
+        path: "/hints-4",
+        name: "hints-4",
+        component: () =>
+            import ("../views/HintPage4.vue")
+    }, {
+        path: "/hints-5",
+        name: "hints-5",
+        component: () =>
+            import ("../views/HintPage5.vue")
+    }, {
+        path: "/hints-6",
+        name: "hints-6",
+        component: () =>
+            import ("../views/HintPage6.vue")
+
+    }, {
         path: '/teams',
         name: 'teams',
         component: () =>
@@ -92,6 +123,27 @@ const routes = [{
             import ('../views/PortalGun3.vue')
     },
     {
+        path: '/blocks',
+        name: 'blocks',
+        component: () =>
+            import ('../views/BlocksBox.vue')
+    },
+    {
+        path: '/blocks-2',
+        name: 'blocks-2',
+        component: () =>
+            import ('../views/BlocksBox2.vue')
+    }, {
+        path: '/blocks-3',
+        name: 'blocks-3',
+        component: () =>
+            import ('../views/BlocksBox3.vue')
+    }, {
+        path: '/blocks-4',
+        name: 'blocks-4',
+        component: () =>
+            import ('../views/BlocksBox4.vue')
+    }, {
         path: '/leaderboard',
         name: 'leaderboard',
         component: () =>
