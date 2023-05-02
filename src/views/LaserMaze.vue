@@ -20,7 +20,8 @@
     export default {
         name: 'IntoTwo',
         data() {
-
+            return {
+            };
         },
 
         created() {
