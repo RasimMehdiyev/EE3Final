@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div @click="this.$router.push('/hints')" class="arrow">
+        <div @click="this.$router.push('/portal-gun-2')" class="arrow">
             <img src="../assets/Vector.png" alt="">
         </div>
         <div class="portal-main">
@@ -17,23 +17,52 @@
                     Can you please tell us which code do you read in the screen? 
                 </p>
                 <img class="portal-img" src="../assets/Group_64.png" alt="">
+                <input maxlength="4" class="code-input" type="text" placeholder="CODE">
+                <button id="send-button">SEND</button>
             </div>
-            <!-- <div class="portal-button">
-                <button>
-                    We have found the battery
-                </button>
-            </div>
-            <div class="help-button">
-                <button>
-                    More help
-                </button>
-                <p>Asking for help will deduct <span style="text-shadow: 0 0 5px #FFBBFF;color:#FFBBFF">2 minutes</span> from the remaining <span style="text-shadow: 0 0 5px #FFBBFF;color:#FFBBFF">time</span></p>
-            </div> -->
+
         </div>
 
     </section>
 </template>
 <style>
+    #send-button{
+        margin-top: 30px;
+        width: 60px;
+        height: 30px;
+        display: flex;
+        font-size: 12px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: #00FFE0;
+        border: 1px solid #00FFE0;
+    }
+    #send-button:hover{
+        transition: 0.5s;
+        background-color: #00FFE0;
+        color:black;
+    }
+
+    .code-input{
+        margin-top: 30px;
+        margin-bottom: 10px;
+        width: 100px;
+        height: 60px;
+        background: none;
+        text-align: center;
+        border: 2px solid #00FFE0;
+        font-size: 22px;
+        color: white;
+    }
+    .code-input:focus{
+        outline: none;
+    }
+    .code-input::placeholder{
+        color: white;
+    }
+
     .portal-main{
         margin-top:60px;
         margin-bottom:120px;

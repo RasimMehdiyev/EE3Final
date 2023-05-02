@@ -3,7 +3,7 @@
         <div @click="this.$router.push('/hints')" class="arrow">
             <img  src="../assets/Vector.png" alt="">
         </div>
-            <RickModal style="position:fixed"/>
+            <RickModal id="rick-modal" style="display:none;position:fixed"/>
         <div class="div-intro-text-1">
             <p >
                 Wow, that was impressive! Your team is amazing. Ok, let´s focus. Now, you should be able to hear something, it´s Rick´s intergalactic voice messages.
@@ -139,6 +139,8 @@ export default {
     data() {
         return {
             voices: [],
+            show: false,
+            error: false,
         }
     }
     ,
@@ -146,8 +148,10 @@ export default {
 
         //change the color of borders when selected
         changeColor(event){
-            console.log(event.target.parentElement)
-            if (event.target.parentElement.style.borderColor === 'rgb(199, 221, 255)'){
+            console.log(event.target.parentElement.children[1].innerText)
+            this.voices.push(event.target.parentElement.children[1].innerText)
+            console.log(this.voices)
+            if (event.target.parentElement.style.borderColor === '#C7DDFF'){
                 event.target.parentElement.style.borderColor = '#00FFE0'
             }
             else{
@@ -157,6 +161,7 @@ export default {
         // when clickin on the grid boxes, select them and add names into the array
         voicesCollect(event){
             // if character is in the array, remove it
+            console.log(event.target.parentElement.children[1].innerText)
             if (this.voices.includes(event.target.parentElement.children[1].innerText)){
                 this.voices.splice(this.voices.indexOf(event.target.parentElement.children[1].innerText), 1)
             }
@@ -164,8 +169,15 @@ export default {
             else{
                 this.voices.push(event.target.parentElement.children[1].innerText)
             }
-            console.log(this.voices)
+            // console.log(this.voices)
+        },
+        rickModal(){
+            if (this.error === true){
+                this.show = true
+                document.getElementById('rick-modal').style.display = 'flex'
+            }
         }
+        
         // when clicking on the button, send the array to the backend
     }
 }
