@@ -15,7 +15,7 @@
                 <div @click="this.$router.push('/laser')" class="hint-page__container__box">
                     <img src="../assets/lasernew.png" alt="">
                 </div>
-                <div class="hint-page__container__box">
+                <div @click="this.$router.push('/voices')" class="hint-page__container__box">
                     <img  src="../assets/voices.png" alt="">
                 </div>
                 <div @click="this.$router.push('/voices')" class="hint-page__container__box">

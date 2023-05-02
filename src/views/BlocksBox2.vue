@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div @click="this.$router.push('/hints')" class="arrow">
+        <div @click="this.$router.push('/blocks')" class="arrow">
             <img src="../assets/Vector.png" alt="">
         </div>
         <div class="portal-main">

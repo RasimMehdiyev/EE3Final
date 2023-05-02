@@ -1,19 +1,23 @@
 <template>
     <section>
-        <div @click="this.$router.push('/hints')" class="arrow">
+        <div @click="this.$router.push('/blocks-3')" class="arrow">
             <img src="../assets/Vector.png" alt="">
         </div>
         <div class="portal-main">
             <div class="portal-par">
                 <p>
-                    Now put every block in its respective shape. And hurry up! Clock’s ticking!  
+                    Agent, we were mistaken. We hacked one of the lab PC’s. 
+                    <br>
+                    Turns out this is one of the most watched TikTok videos in this house:                
                 </p>
             </div>
-            <iframe width="350" height="315"
-            src="https://www.youtube.com/embed/Nz8ssH7LiB0">
-            </iframe>            
+            <div class="container">
+                <iframe class="responsive-iframe"
+                src="https://www.youtube.com/embed/Nz8ssH7LiB0">
+                </iframe>   
+            </div>
             <div class="portal-button">
-                <button @click="this.$router.push('/blocks-4')">
+                <button @click="this.$router.push('/hints-5')">
                     Done!
                 </button>
             </div>
@@ -78,4 +82,22 @@
         font-size: 10px;
         color: white!important;
     }
+    .container {
+        margin-top: 40px;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+      }
+      
+      /* Then style the iframe to fit in the container div with full height and width */
+      .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
 </style>

@@ -3,6 +3,7 @@
         <div @click="this.$router.push('/hints')" class="arrow">
             <img  src="../assets/Vector.png" alt="">
         </div>
+            <RickModal style="position:fixed"/>
         <div class="div-intro-text-1">
             <p >
                 Wow, that was impressive! Your team is amazing. Ok, let´s focus. Now, you should be able to hear something, it´s Rick´s intergalactic voice messages.
@@ -129,8 +130,12 @@
 </style>
 
 <script>
+import RickModal from '../components/RickModal.vue'
 export default {
     name: 'HearVoices',
+    components: {
+        RickModal
+    },
     data() {
         return {
             voices: [],
