@@ -1,25 +1,23 @@
 <template>
     <section>
-        <div @click="this.$router.push('/portal-gun-2')" class="arrow">
+        <div @click="this.$router.push('/invisible-display')" class="arrow">
             <img src="../assets/Vector.png" alt="">
         </div>
         <div class="portal-main">
             <div class="portal-par">
                 <p>
-                    Ok Agent, if what Rick Sánchez says is right hat code
+                    It was a Morty the guy who did it?!
+                    <br>
+                    <br>
+                    Oh no, that it’s terrible, an evil or angry version of a Morty can be way worse than a Rick.
+                    <br>
+                    This is very scary...
                 </p>
-                <br>
-                <br>
-                <p>
-                    We need to identify as soon as possible the owner of the gun. 
-                    In every gun, once you open a portal and travel through it, 
-                    you can see the code of the place where they are coming from.
-                    Can you please tell us which code do you read in the screen? 
-                </p>
-                <img class="portal-img" src="../assets/Group_64.png" alt="">
-                <input maxlength="4" class="code-input" type="text" placeholder="CODE">
-                <button @click="this.$router.push('/portal-gun-4')" id="send-button">SEND</button>
-            </div>
+                <img class="portal-img" src="../assets/invisibledisplay3.png" alt="">
+                <p style="margin-top:30px;">
+                    Try to use the code as a clue! Hurry up, we are getting close to the end of this crazy maze!                </p>
+                <button @click="this.$router.push('/hints-5')" id="send-button">GOT IT</button>
+                </div>
 
         </div>
 
@@ -74,12 +72,12 @@
         align-items: center;
     }
     .portal-img{
-        margin-top: 80px;
-        width: 212px;
-        height: 170px;
+        margin-top: 40px;
+        width: 100%;
+        height: 100%;
     }
     .portal-par{
-        margin-top: 30px;
+        margin-top: 0px;
         width: 279px;
         height: 100%;
         display: flex;

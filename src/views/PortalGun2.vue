@@ -10,7 +10,7 @@
                     We are sensing that the missing battery might be inside a material made of GroepTonio, maybe try to look in a locker...
                 </p>
             </div>
-            <div class="portal-button">
+            <div @click="this.$router.push('/hints-6')" class="portal-button">
                 <button>
                     We have found the battery
                 </button>

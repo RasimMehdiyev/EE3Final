@@ -1,37 +1,65 @@
 <template>
     <section>
-        <div @click="this.$router.push('/hints-4')" class="arrow">
+        <div @click="this.$router.push('/portal-gun-2')" class="arrow">
             <img src="../assets/Vector.png" alt="">
         </div>
         <div class="portal-main">
             <div class="portal-par">
                 <p>
-                    Ok Agent, let’s go to the next one. we have to put the blocks 
-                    in the shapes in order to deactivate the next security maze.
+                    Agent, for the next task, let’s try to figure out this box, our sensors tell us that there are electronics components inside, so it must do something.
                     <br>
-                    First, focus on finding all the pieces, they have anti-spy technology 
-                    so we cannot tell you where they are right now.
+                    <br>
+                    We are detecting one lost connection in the box, try to solve it. 
                 </p>
+                <img class="portal-img" src="../assets/invisibledisplay.png" alt="">
+                <button @click="this.$router.push('/invisible-display-2')" id="send-button">GOT IT</button>
             </div>
-            <img class="portal-img" src="../assets/blocks-pic.png" alt="">
-            <div class="portal-button">
-                <button @click="this.$router.push('/hints-5')">
-                    We have found blocks
-                </button>
-            </div>
-            <div @click="this.$router.push('/blocks-2')" class="help-button">
-                <button>
-                    More help
-                </button>
-                <p>Asking for help will deduct <span style="text-shadow: 0 0 5px #FFBBFF;color:#FFBBFF">2 minutes</span> from the remaining <span style="text-shadow: 0 0 5px #FFBBFF;color:#FFBBFF">time</span></p>
-            </div>
+
         </div>
 
     </section>
 </template>
 <style>
+    #send-button{
+        margin-top: 30px;
+        width: 60px;
+        height: 30px;
+        display: flex;
+        font-size: 12px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: #00FFE0;
+        border: 1px solid #00FFE0;
+    }
+    #send-button:hover{
+        transition: 0.5s;
+        background-color: #00FFE0;
+        color:black;
+    }
+
+    .code-input{
+        margin-top: 30px;
+        margin-bottom: 10px;
+        width: 100px;
+        height: 60px;
+        background: none;
+        text-align: center;
+        border: 2px solid #00FFE0;
+        font-size: 22px;
+        color: white;
+    }
+    .code-input:focus{
+        outline: none;
+    }
+    .code-input::placeholder{
+        color: white;
+    }
+
     .portal-main{
-        margin-top:50px;
+        margin-top:60px;
+        margin-bottom:120px;
         width: 100%;
         height: 100%;
         display: flex;
@@ -41,9 +69,8 @@
     }
     .portal-img{
         margin-top: 40px;
-        width: 350px;
+        width: 100%;
         height: 100%;
-        object-fit: cover;
     }
     .portal-par{
         margin-top: 30px;

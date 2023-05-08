@@ -17,7 +17,9 @@
             <img class="portal-img" src="../assets/blockshint.png" alt="">
             <div class="portal-button">
                 <button @click="this.$router.push('/blocks-3')">
-                    We have found them
+                    Found the blocks.
+                    <br>
+                    Next tip!
                 </button>
             </div>
             <!-- <div @click="this.$router.push('/blocks-2')" class="help-button">

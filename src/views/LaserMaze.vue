@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div @click="this.$router.push('/hints')" class="arrow">
+        <div @click="this.$router.push('/hints-2')" class="arrow">
             <img src="../assets/Vector.png" alt="">
         </div>
         <div class="div-img">

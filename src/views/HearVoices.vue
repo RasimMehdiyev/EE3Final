@@ -145,18 +145,10 @@ export default {
     }
     ,
     methods: {
-
-        //change the color of borders when selected
         changeColor(event){
-            console.log(event.target.parentElement.children[1].innerText)
             this.voices.push(event.target.parentElement.children[1].innerText)
             console.log(this.voices)
-            if (event.target.parentElement.style.borderColor === '#C7DDFF'){
-                event.target.parentElement.style.borderColor = '#00FFE0'
-            }
-            else{
-                event.target.parentElement.style.borderColor = '#C7DDFF'
-            }
+            event.target.parentElement.style.border = '2px solid #00FFE0'
         },
         // when clickin on the grid boxes, select them and add names into the array
         voicesCollect(event){

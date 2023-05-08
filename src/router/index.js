@@ -123,6 +123,13 @@ const routes = [{
             import ('../views/PortalGun3.vue')
     },
     {
+        path: '/portal-gun-4',
+        name: 'portal-gun-4',
+        component: () =>
+            import ('../views/PortalGun4.vue')
+
+    },
+    {
         path: '/blocks',
         name: 'blocks',
         component: () =>
@@ -143,6 +150,27 @@ const routes = [{
         name: 'blocks-4',
         component: () =>
             import ('../views/BlocksBox4.vue')
+    },
+
+    {
+        path: '/invisible-display/',
+        name: 'invisible-display',
+        component: () =>
+            import ('../views/InvisibleDisplay.vue')
+
+    },
+    {
+        path: '/invisible-display-2/',
+        name: 'invisible-display-2',
+        component: () =>
+            import ('../views/InvisibleDisplay2.vue')
+
+    }, {
+        path: '/invisible-display-3/',
+        name: 'invisible-display-3',
+        component: () =>
+            import ('../views/InvisibleDisplay3.vue')
+
     }, {
         path: '/leaderboard',
         name: 'leaderboard',
