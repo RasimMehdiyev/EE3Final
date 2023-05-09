@@ -1,9 +1,13 @@
 <template>
     <section class="voices">
-        <div @click="this.$router.push('/hints')" class="arrow">
+        <div v-if="this.done == true" @click="this.$router.push('/hints-3')" class="arrow">
             <img  src="../assets/Vector.png" alt="">
         </div>
-            <RickModal id="rick-modal" style="display:none;position:fixed"/>
+        <div v-if="this.done == false" @click="this.$router.push('/hints-2')" class="arrow">
+            <img  src="../assets/Vector.png" alt="">
+        </div>
+            <RickModal @click="disableModal" id="rick-modal" style="display:none;position:fixed"/>
+            <RickModalSuccess @click="disableModal" id="rick-modal-success" style="display:none;position:fixed"/>
         <div class="div-intro-text-1">
             <p >
                 Wow, that was impressive! Your team is amazing. Ok, let´s focus. Now, you should be able to hear something, it´s Rick´s intergalactic voice messages.
@@ -14,43 +18,60 @@
         <div class="grid-9-voices">
             <div @click="changeColor" class="grid-box-9">
                 <img src="../assets/Billie.png" alt="">
-                <p>Billie Eilish</p>
+                <label for="billie"><p>Billie Eilish</p></label>
+                <input type="radio" id="billie" value="Billie Eilish">
+                <br>
             </div>
             <div @click="changeColor" class="grid-box-9">
                 <img src="../assets/summer-1.png" alt="">
-                <p>Summer</p>
+                <label for="summer"><p>Summer</p></label>
+                <input type="radio" id="summer" value="Summer">
+                <br>
             </div>
             <div @click="changeColor" class="grid-box-9">
                 <img src="../assets/Beth.png" alt="">
-                <p>Beth</p>
-            </div>
+                <label for="Beth"><p>Beth</p></label>
+                <input type="radio" id="Beth" value="Beth">
+                <br>            </div>
             <div @click="changeColor" class="grid-box-9">
                 <img src="../assets/Jerry.png" alt="">
-                <p>Jerry</p>
+                <label for="Jerry"><p>Jerry</p></label>
+                <input type="radio" id="Jerry" value="Jerry">
+                <br>
             </div>
             <div @click="changeColor" class="grid-box-9">
                 <img src="../assets/Zendeya.png" alt="">
-                <p>Zendaya</p>
+                <label for="Zendeya"><p>Zendeya</p></label>
+                <input type="radio" id="Zendeya" value="Zendeya">
+                <br>
             </div>
             <div @click="changeColor" class="grid-box-9">
                 <img src="../assets/squache.png" alt="">
-                <p>Squanchy</p>
+                <label for="Squanchy"><p>Squanchy</p></label>
+                <input type="radio" id="Squanchy" value="Squanchy">
+                <br>
             </div>
             <div @click="changeColor" class="grid-box-9">
                 <img src="../assets/obama.png" alt="">
-                <p>Obama</p>
+                <label for="Obama"><p>Obama</p></label>
+                <input type="radio" id="Obama" value="Obama">
+                <br>            
             </div>
             <div @click="changeColor" class="grid-box-9">
                 <img src="../assets/Morty.png" alt="">
-                <p>Morty</p>
+                <label for="Morty"><p>Morty</p></label>
+                <input type="radio" id="Morty" value="Morty">
+                <br>            
             </div>
             <div @click="changeColor" class="grid-box-9">
                 <img src="../assets/rick.png" alt="">
-                <p>Rick</p>
+                <label for="Rick"><p>Rick</p></label>
+                <input type="radio" id="Rick" value="Rick">
+                <br>            
             </div>
         </div>
         <div>
-            <button class="voices-button">Enter your choice</button>
+            <button @click="getVoices" class="voices-button">Enter your choice</button>
         </div>
     </section>
 </template>
@@ -131,44 +152,61 @@
 
 <script>
 import RickModal from '../components/RickModal.vue'
+import RickModalSuccess from '../components/RickModalSuccess.vue'
 export default {
     name: 'HearVoices',
     components: {
-        RickModal
+        RickModal,
+        RickModalSuccess
     },
     data() {
         return {
             voices: [],
             show: false,
             error: false,
+            correct_voices:['Rick', 'Morty'],
+            done: false
         }
     }
     ,
     methods: {
-        changeColor(event){
-            this.voices.push(event.target.parentElement.children[1].innerText)
-            console.log(this.voices)
-            event.target.parentElement.style.border = '2px solid #00FFE0'
-        },
-        // when clickin on the grid boxes, select them and add names into the array
-        voicesCollect(event){
-            // if character is in the array, remove it
-            console.log(event.target.parentElement.children[1].innerText)
-            if (this.voices.includes(event.target.parentElement.children[1].innerText)){
-                this.voices.splice(this.voices.indexOf(event.target.parentElement.children[1].innerText), 1)
+        getVoices(){
+
+            // get the value from the checked radio buttons and push them to the array
+            let checked = document.querySelectorAll('input[type="radio"]:checked')
+            // console.log(checked[0].value)
+            for (let i = 0; i < checked.length; i++){
+                this.voices.push(checked[i].value)
             }
-            // if character is not in the array, add it
-            else{
-                this.voices.push(event.target.parentElement.children[1].innerText)
+            // first sort both arrays by alphabetical order
+            this.voices.sort()
+            this.correct_voices.sort()
+            // then compare them
+            if (JSON.stringify(this.voices) === JSON.stringify(this.correct_voices)){
+                this.error = false
+                this.done = true
+                this.rickModal()
+            } else {
+                this.error = true
+                this.rickModal()
             }
-            // console.log(this.voices)
+
         },
         rickModal(){
             if (this.error === true){
                 this.show = true
                 document.getElementById('rick-modal').style.display = 'flex'
             }
-        }
+            else if (this.done === true && this.error === false){
+                this.show = true
+                document.getElementById('rick-modal-success').style.display = 'flex'
+            }
+        },
+        disableModal(){
+            this.show = false
+            document.getElementById('rick-modal').style.display = 'none'
+            document.getElementById('rick-modal-success').style.display = 'none'
+        },
         
         // when clicking on the button, send the array to the backend
     }

@@ -122,6 +122,10 @@
         <div v-if="this.won==true && this.lost==false">
             <h2>You won!</h2>
             <button @click="reset()">Play again</button>
+            <br>
+            or
+            <br>
+            <button @click="this.$router.push('/hints')">Back to hints</button>
             <ul style="list-style-type:none;display:flex;justify-content:center;flex-direction:row;align-items:center;">
                 <li :style="{backgroundColor: color}" style="width:10px;height:10px;border-radius:100%;border: white 1px solid" v-for="color in this.final_color" :key="this.final_color.indexOf(color)">
                 </li>
@@ -140,7 +144,7 @@
         <div v-if="this.counter==1 && this.won==false">
             <div>
                 <select v-model="row1">
-                    <option v-for="color in colors" :value="color" :key="this.colors.indexOf(color)">
+                    <option  v-for="color in colors" :value="color" :key="this.colors.indexOf(color)">
                         {{ color }}
                     </option>
                 </select>

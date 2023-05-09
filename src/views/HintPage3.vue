@@ -18,7 +18,7 @@
                 <div @click="this.$router.push('/voices')" class="hint-page__container__box">
                     <img  src="../assets/voices.png" alt="">
                 </div>
-                <div @click="this.$router.push('/voices')" class="hint-page__container__box">
+                <div @click="this.$router.push('/invisible-display')" class="hint-page__container__box">
                     <img  src="../assets/display.png" alt="">
                 </div>
                 <div class="hint-page__container__box">

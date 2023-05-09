@@ -16,7 +16,7 @@
                 <img class="portal-img" src="../assets/invisibledisplay3.png" alt="">
                 <p style="margin-top:30px;">
                     Try to use the code as a clue! Hurry up, we are getting close to the end of this crazy maze!                </p>
-                <button @click="this.$router.push('/hints-5')" id="send-button">GOT IT</button>
+                <button @click="this.$router.push('/hints-4')" id="send-button">GOT IT</button>
                 </div>
 
         </div>

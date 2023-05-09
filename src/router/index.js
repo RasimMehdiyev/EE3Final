@@ -153,20 +153,20 @@ const routes = [{
     },
 
     {
-        path: '/invisible-display/',
+        path: '/invisible-display',
         name: 'invisible-display',
         component: () =>
             import ('../views/InvisibleDisplay.vue')
 
     },
     {
-        path: '/invisible-display-2/',
+        path: '/invisible-display-2',
         name: 'invisible-display-2',
         component: () =>
             import ('../views/InvisibleDisplay2.vue')
 
     }, {
-        path: '/invisible-display-3/',
+        path: '/invisible-display-3',
         name: 'invisible-display-3',
         component: () =>
             import ('../views/InvisibleDisplay3.vue')
