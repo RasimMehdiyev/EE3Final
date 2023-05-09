@@ -1,11 +1,11 @@
 <template>
     <div>
-        <h1>Mastermind Game</h1>
+        <h1 style="margin-top:40px;margin-bottom:40px;">Mastermind Game</h1>
             <ul style="list-style-type:none;display:flex;justify-content:center;flex-direction:row;align-items:center;" >
-                <li :style="{backgroundColor: color}" style="width:10px;height:10px;border-radius:100%;border: white 1px solid" v-for="color in this.random_colors"  :key="this.random_colors.indexOf(color)"></li>
+                <li :style="{backgroundColor: color}" style="width:20px;height:20px;border-radius:100%;border: white 1px solid" v-for="color in this.random_colors"  :key="this.random_colors.indexOf(color)"></li>
             </ul>
             <ul style="list-style-type:none;display:flex;justify-content:center;flex-direction:row;align-items:center;" >
-                <li :style="{backgroundColor: color}" style="width:10px;height:10px;border-radius:100%;border: white 1px solid" v-for="color in this.correction"  :key="this.correction.indexOf(color)"></li>
+                <li :style="{backgroundColor: color}" style="width:20px;height:20px;border-radius:100%;border: white 1px solid" v-for="color in this.correction"  :key="this.correction.indexOf(color)"></li>
             </ul>
         <div v-if="this.won==false" class="colors-class">
             <div class="colors-rows">
@@ -119,15 +119,23 @@
                 </div>
             </div>
         </div>
-        <div v-if="this.won==true">
+        <div v-if="this.won==true && this.lost==false">
             <h2>You won!</h2>
             <button @click="reset()">Play again</button>
             <ul style="list-style-type:none;display:flex;justify-content:center;flex-direction:row;align-items:center;">
-                <li :style="{backgroundColor: color}" style="width:10px;height:10px;border-radius:100%;border: black 1px solid" v-for="color in this.final_color" :key="this.final_color.indexOf(color)">
+                <li :style="{backgroundColor: color}" style="width:10px;height:10px;border-radius:100%;border: white 1px solid" v-for="color in this.final_color" :key="this.final_color.indexOf(color)">
                 </li>
             </ul>
         </div>
-        <!-- choose colors for row1, row2, row3, row4 -->
+        <div v-if="this.lost == true">
+            <h2>You lost!</h2>
+            <button @click="reset()">Play again</button>
+            Correct Colors were:
+            <ul style="list-style-type:none;display:flex;justify-content:center;flex-direction:row;align-items:center;">
+                <li :style="{backgroundColor: color}" style="width:20px;height:20px;border-radius:100%;border: white 1px solid" v-for="color in this.random_colors" :key="this.random_colors.indexOf(color)">
+                </li>
+            </ul>
+        </div>
         <div v-if="this.counter==1 && this.won==false">
             <div>
                 <select v-model="row1">
@@ -223,7 +231,7 @@
                 <button @click="check()">Check</button>
             </div>
         </div>
-        <div v-if="this.counter==6">
+        <div v-if="this.counter==6 && this.won==false">
             <div>
                 <select v-model="row21">
                     <option v-for="color in colors" :value="color" :key="this.colors.indexOf(color)">
@@ -258,7 +266,7 @@
         align-items: center;
         justify-content: center;
         margin: 20px;
-        background-color: aqua;
+        background-color: black;
     }
     .row {
         display: flex;
@@ -270,7 +278,7 @@
         width: 20px;
         height: 20px;
         border-radius: 100%;
-        border: 1px solid black;
+        border: 1px solid white;
     }
     .correction{
         display: flex;
@@ -295,6 +303,7 @@
             counter2: 1,
             i: 1,
             won: false,
+            lost: false,
             row1: null,
             row2: null,
             row3: null,
@@ -337,6 +346,14 @@
             this.random_colors = rand_colors;
             console.log(this.random_colors);
         },  
+        sendScore(){
+            fetch('http://ee3project.herokuapp.com/set-status/3/1/')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            });
+        },
+
         check() {
 
             // check if the user won
@@ -449,9 +466,13 @@
             // if last 4 corrections are gray, user won
             if (this.correction.slice(-4).every((el) => el == 'gray')) {
                 this.won = true;
+                this.sendScore();
             }
             // if counter is 8 and last 4 corrections are not gray, user lost
-            if (this.counter == 8 && !this.correction.slice(-4).every((el) => el == 'gray')) {
+            console.log(this.counter);
+            console.log(this.won)
+            if (this.counter == 7 && this.won == false) {
+                console.log('lost');
                 this.lost = true;
             }
 
