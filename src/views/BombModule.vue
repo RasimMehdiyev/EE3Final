@@ -1,29 +1,33 @@
 <template>
     <section>
-        <div @click="this.$router.push('/portal-gun-3')" class="arrow">
-            <img src="../assets/Vector.png" alt="">
+        <h1 style="margin-top: 40px; font: 'Get Schwifty' sans-sherif;color:red;">FINAL TASK</h1>
+        <div @click="this.$router.push('/hints')" class="arrow">
+            <img src="../assets/arrow-big-left(1).png" alt="">
         </div>
-        <div class="portal-main">
-            <div class="portal-par">
-                <p>
-                    Oh no! That code is from the Citadel!!
-                    <br>
-                    <br>
-                    We are completely lost, it could be any Rick from any reality, or even worst, 
-                    ANY MORTY!!                    
-                </p>
-                <img class="portal-img" src="../assets/portalgun4.png" alt="">
-                <p style="margin-top:40px;">
-                    Hurry up agent! Keep solving the clues, we need to fix this as soon as possible!!
-                </p>
-                <button style="margin-top: 40px;" @click="this.$router.push('/hints-6')">Back to hints</button>
-            </div>
+        <div class="bomb-class">
+            <img src="../assets/Bomb.png">
+            <button @click="this.$router.push('/bomb-2')" style="margin-top:40px;color:red;background-color:black;border-color:red;">NEXT</button>
+        </div>
 
-        </div>
 
     </section>
 </template>
 <style>
+.bomb-class{
+    margin-top: 60px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+}
+.bomb-class img{
+    width: 50%;
+    height: 50%;
+
+}
     #send-button{
         margin-top: 30px;
         width: 60px;

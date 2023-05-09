@@ -30,7 +30,7 @@
                 <div @click="this.$router.push('/mastermind')" class="hint-page__container__box">
                     <img style="width:40px; height:80px" src="../assets/mastermind.png" alt="">
                 </div>
-                <div class="hint-page__container__box">
+                <div @click="this.$router.push('/bomb')" class="hint-page__container__box">
                     <img  src="../assets/Dynamite.png" alt="">
                 </div>
                 <div class="hint-page__container__box">

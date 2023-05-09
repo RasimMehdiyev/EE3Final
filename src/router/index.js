@@ -171,7 +171,20 @@ const routes = [{
         component: () =>
             import ('../views/InvisibleDisplay3.vue')
 
-    }, {
+    },
+    {
+        path: '/bomb',
+        name: 'bomb',
+        component: () =>
+            import ('../views/BombModule.vue')
+    },
+    {
+        path: '/bomb-2',
+        name: 'bomb-2',
+        component: () =>
+            import ('../views/BombModule2.vue')
+    },
+    {
         path: '/leaderboard',
         name: 'leaderboard',
         component: () =>
