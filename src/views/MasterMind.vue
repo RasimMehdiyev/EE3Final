@@ -4,9 +4,9 @@
             <ul style="list-style-type:none;display:flex;justify-content:center;flex-direction:row;align-items:center;" >
                 <li :style="{backgroundColor: color}" style="width:20px;height:20px;border-radius:100%;border: white 1px solid" v-for="color in this.random_colors"  :key="this.random_colors.indexOf(color)"></li>
             </ul>
-            <ul style="list-style-type:none;display:flex;justify-content:center;flex-direction:row;align-items:center;" >
+            <!-- <ul style="list-style-type:none;display:flex;justify-content:center;flex-direction:row;align-items:center;" >
                 <li :style="{backgroundColor: color}" style="width:20px;height:20px;border-radius:100%;border: white 1px solid" v-for="color in this.correction"  :key="this.correction.indexOf(color)"></li>
-            </ul>
+            </ul> -->
         <div v-if="this.won==false" class="colors-class">
             <div class="colors-rows">
                 <div class="correction-colors">
@@ -130,8 +130,9 @@
         <div v-if="this.lost == true">
             <h2>You lost!</h2>
             <button @click="reset()">Play again</button>
+            <br>
             Correct Colors were:
-            <ul style="list-style-type:none;display:flex;justify-content:center;flex-direction:row;align-items:center;">
+            <ul style="margin-top:15px;list-style-type:none;display:flex;justify-content:center;flex-direction:row;align-items:center;">
                 <li :style="{backgroundColor: color}" style="width:20px;height:20px;border-radius:100%;border: white 1px solid" v-for="color in this.random_colors" :key="this.random_colors.indexOf(color)">
                 </li>
             </ul>
@@ -155,7 +156,7 @@
                 <button @click="check()">Check</button>
             </div>
         </div>
-        <div v-if="this.counter==2">
+        <div v-if="this.counter==2 && this.won==false">
             <div>
                 <select v-model="row5">
                     <option v-for="color in colors" :value="color" :key="this.colors.indexOf(color)">
@@ -174,7 +175,7 @@
                 <button @click="check()">Check</button>
             </div>
         </div>
-        <div v-if="this.counter==3">
+        <div v-if="this.counter==3 && this.won==false">
             <div>
                 <select v-model="row9">
                     <option v-for="color in colors" :value="color" :key="this.colors.indexOf(color)">
@@ -193,7 +194,7 @@
                 <button @click="check()">Check</button>
             </div>
         </div>
-        <div v-if="this.counter==4">
+        <div v-if="this.counter==4 && this.won==false">
             <div>
                 <select v-model="row13">
                     <option v-for="color in colors" :value="color" :key="this.colors.indexOf(color)">
@@ -212,7 +213,7 @@
                 <button @click="check()">Check</button>
             </div>
         </div>
-        <div v-if="this.counter==5">
+        <div v-if="this.counter==5 && this.won==false">
             <div>
                 <select v-model="row17">
                     <option v-for="color in colors" :value="color" :key="this.colors.indexOf(color)">
@@ -254,6 +255,29 @@
 </template>
 
 <style>
+
+    button{
+        margin: 10px;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: black;
+        color: white;
+        border-color: #00FFE0;
+        outline: none;
+    }
+    select{
+        margin: 5px;
+        padding: 5px;
+        border-radius: 8px;
+        background-color: black;
+        color: white;
+        border-color: #00FFE0;
+        outline: none;
+    }
+    option{
+        background-color: black;
+        color: white;
+    }
     .correction-colors{
         display: flex;
         flex-direction: row;
@@ -332,6 +356,42 @@
         }
       },
       methods: {
+        reset(){
+            this.counter = 1;
+            this.counter2 = 1;
+            // set all rows to null
+            this.row1 = null;
+            this.row2 = null;
+            this.row3 = null;
+            this.row4 = null;
+            this.row5 = null;
+            this.row6 = null;
+            this.row7 = null;
+            this.row8 = null;
+            this.row9 = null;
+            this.row10 = null;
+            this.row11 = null;
+            this.row12 = null;
+            this.row13 = null;
+            this.row14 = null;
+            this.row15 = null;
+            this.row16 = null;
+            this.row17 = null;
+            this.row18 = null;
+            this.row19 = null;
+            this.row20 = null;
+            this.row21 = null;
+            this.row22 = null;
+            this.row23 = null;
+            this.row24 = null;
+
+            // set all correction colors to null
+            this.correction = [];
+            this.remaining = [];
+            this.randomColors();
+            this.won = false;
+            this.lost = false;
+        },
         randomColors() {
             // return array of 4 random colors
             let rand_colors = [];
@@ -468,7 +528,7 @@
                 this.won = true;
                 this.sendScore();
             }
-            // if counter is 8 and last 4 corrections are not gray, user lost
+            // if counter is 7 and last 4 corrections are not gray, user lost
             console.log(this.counter);
             console.log(this.won)
             if (this.counter == 7 && this.won == false) {
