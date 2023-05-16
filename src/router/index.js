@@ -185,6 +185,18 @@ const routes = [{
             import ('../views/BombModule2.vue')
     },
     {
+        path: '/good-ending',
+        name: 'good-ending',
+        component: () =>
+            import ('../views/FinalGood.vue')
+    },
+    {
+        path: '/bad-ending',
+        name: 'bad-ending',
+        component: () =>
+            import ('../views/FinalBad.vue')
+    },
+    {
         path: '/leaderboard',
         name: 'leaderboard',
         component: () =>
