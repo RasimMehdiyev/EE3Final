@@ -1,5 +1,6 @@
 <template>
     <section class="leaderboard">
+        
         <table>
             <tr>
               <th>Ranking</th>

@@ -1,21 +1,44 @@
 <template>
     <section class="leaderboard">
+        <div style="margin-bottom: 20px;" @click="this.$router.push('/')" class="arrow">
+            <img src="../assets/Vector.png" alt="">
+        </div> 
         <table>
             <tr>
                 <th>Ranking</th>
+                <th>Team ID</th>
                 <th>Team</th>
-                <th>Time</th>
                 <th>Points</th>
             </tr>
             <tr v-for="team in this.teams" :key="team.id">
+                <td>{{team.ranking}}</td>
                 <td>{{team.id}}</td>
                 <td>{{team.name}}</td>
-                <td>00:00</td>
                 <td>{{team.points}}</td>
             </tr>
         </table> 
     </section>
 </template>
+
+<!-- <script>
+export default{
+    name: 'LeaderBoard',
+    data(){
+        return{
+            teams: [],
+            counter:1,
+        }
+    },
+    created(){
+        fetch('https://ee3project.herokuapp.com/leaderboard/')
+            .then(response => response.json())
+            .then(data => {
+                this.teams = data
+            })
+    }
+}
+</script> -->
+
 
 <style>
 .leaderboard{
@@ -46,6 +69,7 @@ export default{
     data(){
         return{
             teams: [],
+            ranking: 1,
             counter:1,
         }
     },
@@ -54,6 +78,10 @@ export default{
             .then(response => response.json())
             .then(data => {
                 this.teams = data
+                // put ranking in each team
+                for (let i = 0; i < this.teams.length; i++) {
+                    this.teams[i].ranking = i+1
+                }
             })
     }
 }
