@@ -415,8 +415,9 @@
             this.random_colors = rand_colors;
             console.log(this.random_colors);
         },  
+
         sendScore(){
-            fetch('http://ee3project.herokuapp.com/set-status/3/1/')
+            fetch('http://djangoenvee3.eba-2qgbemhy.us-west-2.elasticbeanstalk.com/set-status/7/1/')
             .then(response => response.json())
             .then(data => {
                 console.log(data);
