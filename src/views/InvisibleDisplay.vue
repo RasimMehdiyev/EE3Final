@@ -1,8 +1,9 @@
 <template>
     <section>
-        <div @click="this.$router.push('/hints-4')" class="arrow">
+        <div @click="this.$router.push('/hints-5')" class="arrow">
             <img src="../assets/Vector.png" alt="">
         </div>
+        
         <div class="portal-main">
             <div class="portal-par">
                 <p>

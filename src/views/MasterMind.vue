@@ -1,7 +1,12 @@
 <template>
     <div>
+        
         <h1 style="margin-top:40px;margin-bottom:40px;">Mastermind Game</h1>
-            <ul style="list-style-type:none;display:flex;justify-content:center;flex-direction:row;align-items:center;" >
+        <div style="margin-bottom: 20px;" @click="this.$router.push('/hints-6')" class="arrow">
+            <img src="../assets/Vector.png" alt="">
+        </div>    
+        
+        <ul style="list-style-type:none;display:flex;justify-content:center;flex-direction:row;align-items:center;" >
                 <li :style="{backgroundColor: color}" style="width:20px;height:20px;border-radius:100%;border: white 1px solid" v-for="color in this.random_colors"  :key="this.random_colors.indexOf(color)"></li>
             </ul>
             <!-- <ul style="list-style-type:none;display:flex;justify-content:center;flex-direction:row;align-items:center;" >

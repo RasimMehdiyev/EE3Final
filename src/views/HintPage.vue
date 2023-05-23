@@ -18,11 +18,11 @@
                 <div @click="this.$router.push('/voices')" class="hint-page__container__box">
                     <img  src="../assets/voices.png" alt="">
                 </div>
-                <div @click="this.$router.push('/invisible-display')" class="hint-page__container__box">
-                    <img  src="../assets/display.png" alt="">
-                </div>
                 <div @click="this.$router.push('/blocks')" class="hint-page__container__box">
                     <img  src="../assets/cube_rnm.png" alt="">
+                </div>
+                <div @click="this.$router.push('/invisible-display')" class="hint-page__container__box">
+                    <img  src="../assets/display.png" alt="">
                 </div>
                 <div @click="this.$router.push('/portal-gun')" class="hint-page__container__box">
                     <img style="width:80px; height:70px" src="../assets/portalgun.png" alt="">

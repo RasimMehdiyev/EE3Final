@@ -185,10 +185,21 @@ export default {
             if (JSON.stringify(this.voices) === JSON.stringify(this.correct_voices)){
                 this.error = false
                 this.done = true
+                this.voices = []
                 this.rickModal()
+                // uncheck the radio buttons
+                for (let i = 0; i < checked.length; i++){
+                    checked[i].checked = false
+                }
             } else {
                 this.error = true
+                this.voices = []
+                for (let i = 0; i < checked.length; i++){
+                    checked[i].checked = false
+                }
                 this.rickModal()
+                // after two seconds redirect to /hints-3
+
             }
 
         },
@@ -200,6 +211,9 @@ export default {
             else if (this.done === true && this.error === false){
                 this.show = true
                 document.getElementById('rick-modal-success').style.display = 'flex'
+                setTimeout(() => {
+                    this.$router.push('/hints-3')
+                }, 2000);
             }
         },
         disableModal(){

@@ -18,12 +18,13 @@
                 <div @click="this.$router.push('/voices')" class="hint-page__container__box">
                     <img  src="../assets/voices.png" alt="">
                 </div>
-                <div @click="this.$router.push('/invisible-display')" class="hint-page__container__box">
-                    <img  src="../assets/unavailable.png" alt="">
-                </div>
                 <div class="hint-page__container__box">
                     <img  src="../assets/unavailable.png" alt="">
                 </div>
+                <div @click="this.$router.push('/invisible-display')" class="hint-page__container__box">
+                    <img  src="../assets/unavailable.png" alt="">
+                </div>
+
                 <div @click="this.$router.push('/portal-gun')" class="hint-page__container__box">
                     <img  src="../assets/unavailable.png" alt="">
                 </div>
