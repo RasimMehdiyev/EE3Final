@@ -417,7 +417,7 @@
         },  
 
         sendScore(){
-            fetch('https://djangoenvee3.eba-2qgbemhy.us-west-2.elasticbeanstalk.com/set-status/8/1/')
+            fetch('http://djangoenvee3.eba-2qgbemhy.us-west-2.elasticbeanstalk.com/set-status/8/1/')
             .then(response => response.json())
             .then(data => {
                 console.log(data);
