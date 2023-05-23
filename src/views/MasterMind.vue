@@ -330,7 +330,7 @@
             code: [],
             remaining: [],
             correction:[], // black if color and position are correct, white if color is correct but position is wrong
-            colors: ['red', 'yellow', 'green', 'blue', 'black'],
+            colors: ['red', 'yellow', 'green', 'blue', 'purple'],
             random_colors:[],
             counter: 1,
             counter2: 1,
